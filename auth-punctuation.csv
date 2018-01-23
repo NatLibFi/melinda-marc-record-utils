@@ -1,0 +1,65 @@
+Fields,Name portion,Description,portion,preceding_punct,exceptions / seen examples
+[1457]00,$a ,Personal name (NR),N,none,
+[1457]10,$a ,Corporate name or jurisdiction name as entry element (NR),N,none,
+[1457]11,$a ,Meeting name or jurisdiction name as entry element (NR),N,none,
+[1457]00,$b , Numeration (NR),N,none,
+[1457]10,$b , Subordinate unit (R),N,period,
+[1457]00,$c , Titles and words associated with a name (R),N,comma,
+[1457](10|11),$c ,Location of meeting (R),N,comma,"- colon if preceded by $d
+- semicolon if preceded by $c"
+[1457]00,$d ,Dates associated with a name (NR),N,comma,- colon if preceded by $n
+[1457]11,$d ,Date of meeting (NR),N,,
+[1457](00|10),$e ,Relator term (R),N,cond_comma,
+[1457]11,$e ,Subordinate unit (R),N,period,
+[1457]11,$j ,Relator term (R),N,comma,
+[1457]00,$j ,Attribution qualifier (R),N,comma,
+[1457]00,$q ,Fuller form of name (NR),N,comma,
+[1457]11,$q ,Name of meeting following jurisdiction name entry element (NR),N,,
+[1457](00|11),$u ,Affiliation (NR),N,period,?
+[1457]10,$u ,Affiliation (NR) or Address,N,period,"- period, if address"
+,,,,,
+,Control subfields for name portion,,,,
+[1457](00|10|11),$4 ,Relator code (R),NC,none,
+,,,,,
+,Title portion,,,,
+[1457](00|10|11),$f ,Date of a work (NR),T,period,
+[1457](00|10|11),$h ,Medium (NR),T,period,
+[457](00|10|11),$i ,Relationship information (R),T,none,
+[1457](00|10|11),$k ,Form subheading (R),T,period,
+[1457](00|10|11),$l ,Language of a work (NR),T,comma / period,"- Finnish MARC21 comma,
+- MARC21 period"
+[1457](00|10|11),$m ,Medium of performance for music,T,comma,
+[1457](00|10|11),$n ,Number of part/section of a work (R),T,"comma, period"," - depends on data?
+- period, if preceded by $k, $m, $t
+- comma, if preceded by $b, $m"
+[1457](00|10),$o ,Arranged statement for music (NR),T,semicolon,
+[1457](00|10|11),$p ,Name of part/section of a work (R),T,"comma, period, none","- depends on data?
+- period if preceded by $t, $n, $p
+- comma, if preceded by $n
+- none, if preceded by $k"
+[1457](00|10),$r ,Key for music (NR),T,comma,
+[1457](00|10|11),$s ,Version (NR),T,period,
+[1457](00|10|11),$t ,Title of a work (NR),T,none,- usually first in section -> period
+,,,,,
+,Name and title portions,,,,
+[1457](10|11),$d ,Date of meeting or treaty signing (R),NT,,
+[1457](00|10|11),$g ,Miscellaneous information (NR),NT,comma,"- colon, if preceded by $d"
+[1457]10,$g ,"Miscellaneous information (NR), other party to treaties.",NT,comma,"- colon, if preceded by $d
+- period, if preceded by $t"
+[1457](10|11),$n ,Number of part/section/meeting (R),NT,,
+,,,,,
+,Subject subdivision portion,,,,
+[1457](00|10|11),$v , Form subdivision (R)   [600],S,none,
+[1457](00|10|11),$x , General subdivision (R)   [600],S,none,
+[1457](00|10|11),$y , Chronological subdivision (R)   [600],S,none,
+[1457](00|10|11),$z , Geographic subdivision (R)   [600],S,none,
+,,,,,
+,Control subfields for whole field,,,,
+[457](00|10|11),$w ,,cf,none,
+[1457](00|10|11),$0 , Authority record control number (R),cf,none,
+7(00|10|11),$2 , Source of heading or term (NR),cf,none,
+[1457](00|10|11),$5 , Institution to which field applies (NR),cf,none,
+[1457](00|10|11),$6 , Linkage (NR),cf,none,
+[1457](00|10|11),$7 , Control subfield (NR),cf,none,
+[1457](00|10|11),$8 , Field link and sequence number (R),cf,none,
+[1457](00|10|11),$9 ,Local control subfield,cf,none,

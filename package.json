@@ -91,9 +91,14 @@
 		],
 		"sourceMap": false,
 		"instrument": false,
-		"lines": 100,
-		"statements": 100,
-		"functions": 100,
-		"branches": 100
+		"lines": 90,
+		"statements": 90,
+		"functions": 90,
+		"branches": 90
+	},
+	"dependencies": {
+		"csv-parse": "^2.0.0",
+		"debug": "^3.1.0",
+		"lodash": "^4.17.4"
 	}
 }

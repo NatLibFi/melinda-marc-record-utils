@@ -1,6 +1,6 @@
 /**
 *
-* @licstart  The following is the entire license notice for the JavaScript code in this file. 
+* @licstart  The following is the entire license notice for the JavaScript code in this file.
 *
 * Utility functions for dealing with MARC records
 *
@@ -26,11 +26,12 @@
 *
 */
 
-/* eslint-disable no-undef, max-nested-callbacks, no-unused-expressions */
-
-'use strict';
-
-import {expect} from 'chai';
-import * as testContext from '../src/index';
-
-describe.skip('index');
+export default function fieldToString(field) {
+	if (field && field.subfields) {
+		const ind1 = field.ind1 || ' ';
+		const ind2 = field.ind2 || ' ';
+		const subfields = field.subfields.map(subfield => `‡${subfield.code}${subfield.value}`).join('');
+		return `${field.tag} ${ind1}${ind2} ${subfields}`;
+	}
+	return `${field.tag}    ${field.value}`;
+}
