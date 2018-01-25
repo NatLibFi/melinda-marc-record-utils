@@ -26,43 +26,17 @@
 *
 */
 
-import tail from 'lodash/tail';
 import includes from 'lodash/includes';
 import head from 'lodash/head';
-import parse from 'csv-parse/lib/sync';
 import createDebug from 'debug';
-import fieldToString from './field-to-string';
+import fieldToString from '../field-to-string';
+
+import RecordTypes from './record-types';
+import PunctuationError from './punctuation-error';
 
 const debug = createDebug('marc-record-punctuation');
 
-export const RecordTypes = {
-	AUTHORITY: 'AUTHORITY',
-	BIBLIOGRAPHIC: 'BIBLIOGRAPHIC'
-};
-
-export class PunctuationError extends Error {
-	constructor(message) {
-		super(message);
-		Error.captureStackTrace(this, this.constructor);
-		this.name = 'PunctuationError';
-	}
-}
-
-export function readRulesFromCSV(csv) {
-	const rows = parse(csv);
-	const rules = tail(rows).filter(row => row[0] !== '').map(row => {
-		const [selector, namePortion, description, portion, preceedingPunctuation, exceptions] = row;
-		return {
-			selector: new RegExp(selector.replace(/X/g, '.')),
-			namePortion: namePortion.replace(/\$/g, '').trim(),
-			description, portion, preceedingPunctuation, exceptions
-		};
-	});
-
-	return rules;
-}
-
-export function createRecordFixer(rules, recordType = RecordTypes.BIBLIOGRAPHIC) {
+export default function createPunctuationFixer(rules, recordType = RecordTypes.BIBLIOGRAPHIC) {
 	function punctuateField(field) {
 		debug(`Handling field ${field.tag}`);
 		debug(`Field contents: ${fieldToString(field)}`);
