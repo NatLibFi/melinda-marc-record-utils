@@ -26,9 +26,7 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-
-export {Punctuation};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+export {default as RecordTypes} from './record-types';
+export {default as PunctuationError} from './punctuation-error';
+export {default as readPunctuationRulesFromJSON} from './read-rules-from-json';
+export {default as createRecordFixer} from './create-record-fixer';

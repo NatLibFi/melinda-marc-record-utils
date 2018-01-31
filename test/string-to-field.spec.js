@@ -26,9 +26,29 @@
 *
 */
 
-import * as Punctuation from './punctuation';
+/* eslint-disable no-undef */
 
-export {Punctuation};
+import {expect} from 'chai';
+import {stringToField} from '../src/index';
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+describe('stringToField', () => {
+	it('should convert field string to object', () => {
+		const result = stringToField('100 12 ‡asomething‡belse');
+
+		expect(result).to.deep.equal({
+			tag: '100',
+			ind1: '1',
+			ind2: '2',
+			subfields: [
+				{
+					code: 'a',
+					value: 'something'
+				},
+				{
+					code: 'b',
+					value: 'else'
+				}
+			]
+		});
+	});
+});

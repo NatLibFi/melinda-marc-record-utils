@@ -26,9 +26,12 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-
-export {Punctuation};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+export default function fieldToString(field) {
+	if (field && field.subfields) {
+		const ind1 = field.ind1 || ' ';
+		const ind2 = field.ind2 || ' ';
+		const subfields = field.subfields.map(subfield => `‡${subfield.code}${subfield.value}`).join('');
+		return `${field.tag} ${ind1}${ind2} ${subfields}`;
+	}
+	return `${field.tag}    ${field.value}`;
+}

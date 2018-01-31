@@ -26,9 +26,56 @@
 *
 */
 
-import * as Punctuation from './punctuation';
+/* eslint-disable no-undef */
 
-export {Punctuation};
+import {expect} from 'chai';
+import {fieldToString} from '../src/index';
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+describe('fieldToString', () => {
+	it('should convert field object with subfields to string', () => {
+		const result = fieldToString({
+			tag: '100',
+			ind1: '1',
+			ind2: '2',
+			subfields: [
+				{
+					code: 'a',
+					value: 'something'
+				},
+				{
+					code: 'b',
+					value: 'else'
+				}
+			]
+		});
+
+		expect(result).to.equal('100 12 ‡asomething‡belse');
+	});
+
+	it('should convert field object with subfields and undefined indicators to string', () => {
+		const result = fieldToString({
+			tag: '100',
+			subfields: [
+				{
+					code: 'a',
+					value: 'something'
+				},
+				{
+					code: 'b',
+					value: 'else'
+				}
+			]
+		});
+
+		expect(result).to.equal('100    ‡asomething‡belse');
+	});
+
+	it('should convert field object without subfields to string', () => {
+		const result = fieldToString({
+			tag: '100',
+			value: 'something'
+		});
+
+		expect(result).to.equal('100    something');
+	});
+});

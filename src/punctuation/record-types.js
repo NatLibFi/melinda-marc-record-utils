@@ -26,9 +26,9 @@
 *
 */
 
-import * as Punctuation from './punctuation';
+const PunctuationRecordTypes = {
+	AUTHORITY: 'AUTHORITY',
+	BIBLIOGRAPHIC: 'BIBLIOGRAPHIC'
+};
 
-export {Punctuation};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+export default PunctuationRecordTypes;

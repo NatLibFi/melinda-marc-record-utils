@@ -26,9 +26,18 @@
 *
 */
 
-import * as Punctuation from './punctuation';
+import tail from 'lodash/tail';
 
-export {Punctuation};
+export default function stringToField(fieldStr) {
+	const tag = fieldStr.substr(0, 3);
+	const ind1 = fieldStr.substr(4, 1);
+	const ind2 = fieldStr.substr(5, 1);
+	const subfieldsStr = fieldStr.substr(6);
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+	const subfields = tail(subfieldsStr.split('‡')).map(subfieldStr => ({
+		code: subfieldStr.substr(0, 1),
+		value: subfieldStr.substr(1)
+	}));
+
+	return {tag, ind1, ind2, subfields};
+}

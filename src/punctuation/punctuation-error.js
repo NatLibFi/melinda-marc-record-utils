@@ -26,9 +26,10 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-
-export {Punctuation};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+export default class PunctuationError extends Error {
+	constructor(message) {
+		super(message);
+		Error.captureStackTrace(this, this.constructor);
+		this.name = 'PunctuationError';
+	}
+}

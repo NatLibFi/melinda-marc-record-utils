@@ -1,6 +1,6 @@
 /**
 *
-* @licstart  The following is the entire license notice for the JavaScript code in this file. 
+* @licstart  The following is the entire license notice for the JavaScript code in this file.
 *
 * Utility functions for dealing with MARC records
 *
@@ -26,11 +26,15 @@
 *
 */
 
-/* eslint-disable no-undef, max-nested-callbacks, no-unused-expressions */
+export default function readPunctuationRulesFromJSON(json) {
+	const rules = json.filter(row => row.selector !== '').map(row => {
+		const {selector, namePortion, description, portion, preceedingPunctuation, exceptions} = row;
+		return {
+			selector: new RegExp(selector.replace(/X/g, '.')),
+			namePortion: namePortion.replace(/\$/g, '').trim(),
+			description, portion, preceedingPunctuation, exceptions
+		};
+	});
 
-'use strict';
-
-import {expect} from 'chai';
-import * as testContext from '../src/index';
-
-describe.skip('index');
+	return rules;
+}
