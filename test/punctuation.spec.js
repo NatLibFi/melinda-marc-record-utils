@@ -28,14 +28,12 @@
 
 /* eslint-disable no-undef */
 
-import fs from 'fs';
-import path from 'path';
 import includes from 'lodash/includes';
 import {expect} from 'chai';
 import {Punctuation, fieldToString, stringToField} from '../src/index';
 
-const bibRules = Punctuation.readRulesFromCSV(fs.readFileSync(path.resolve(__dirname, '../bib-punctuation.csv'), 'utf8'));
-const authRules = Punctuation.readRulesFromCSV(fs.readFileSync(path.resolve(__dirname, '../auth-punctuation.csv'), 'utf8'));
+const bibRules = Punctuation.readPunctuationRulesFromJSON(require('../src/punctuation/bib-punctuation.json'));
+const authRules = Punctuation.readPunctuationRulesFromJSON(require('../src/punctuation/auth-punctuation.json'));
 
 describe('fixPunctuation', () => {
 	const fixPunctuationFromBibField = Punctuation.createRecordFixer(bibRules);

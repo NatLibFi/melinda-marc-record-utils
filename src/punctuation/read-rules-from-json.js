@@ -26,13 +26,9 @@
 *
 */
 
-import tail from 'lodash/tail';
-import parse from 'csv-parse/lib/sync';
-
-export default function readPunctuationRulesFromCSV(csv) {
-	const rows = parse(csv);
-	const rules = tail(rows).filter(row => row[0] !== '').map(row => {
-		const [selector, namePortion, description, portion, preceedingPunctuation, exceptions] = row;
+export default function readPunctuationRulesFromJSON(json) {
+	const rules = json.filter(row => row.selector !== '').map(row => {
+		const {selector, namePortion, description, portion, preceedingPunctuation, exceptions} = row;
 		return {
 			selector: new RegExp(selector.replace(/X/g, '.')),
 			namePortion: namePortion.replace(/\$/g, '').trim(),

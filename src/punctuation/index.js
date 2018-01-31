@@ -28,5 +28,5 @@
 
 export {default as RecordTypes} from './record-types';
 export {default as PunctuationError} from './punctuation-error';
-export {default as readRulesFromCSV} from './read-rules-from-csv';
+export {default as readPunctuationRulesFromJSON} from './read-rules-from-json';
 export {default as createRecordFixer} from './create-record-fixer';
