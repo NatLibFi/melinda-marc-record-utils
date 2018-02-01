@@ -26,11 +26,6 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
+export {default as findAuthorizedPortion} from './find-authorized-portion';
+export {default as updateAuthorizedPortion} from './update-authorized-portion';
+export {default as RecordType} from './record-type';
