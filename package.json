@@ -20,7 +20,7 @@
 		"node": ">=7"
 	},
 	"scripts": {
-		"prepublishOnly": "npm run build:transpile",
+		"prepublishOnly": "npm run build:transpile && npm run copyfiles",
 		"lint": "xo --fix",
 		"test": "cross-env NODE_ENV=test nyc mocha --require babel-core/register",
 		"coverage": "nyc check-coverage",
