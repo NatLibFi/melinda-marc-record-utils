@@ -161,7 +161,7 @@ describe('AuthorizedPortion', () => {
 				const authorizedPortion = AuthorizedPortion.findAuthorizedPortion(AuthorizedPortion.RecordType.AUTH, authorityRecordField);
 				const resultingField = AuthorizedPortion.updateAuthorizedPortion(AuthorizedPortion.RecordType.BIB, bibRecordField, authorizedPortion);
 
-				const fieldSharesSubfieldsWithAuthorizedPortion = resultingField.subfields.some(subfield => authorizedPortion.subfields.includes(subfield));
+				const fieldSharesSubfieldsWithAuthorizedPortion = resultingField.subfields.some(subfield => authorizedPortion.subfields.indexOf(subfield) > -1);
 
 				expect(fieldSharesSubfieldsWithAuthorizedPortion).to.equal(false, 'Expected resulting field not to share subfields with authorizedPortion');
 			});
