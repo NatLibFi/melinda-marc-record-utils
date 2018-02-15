@@ -25,7 +25,6 @@
 * for the JavaScript code in this file.
 *
 */
-
 import includes from 'lodash/includes';
 import head from 'lodash/head';
 import createDebug from 'debug';
@@ -145,7 +144,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		}
 
 		if (punctType === 'COMMA') {
-			if (!preceedingSubfield.value.endsWith(',')) {
+			if (!/,$/.test(preceedingSubfield.value)) {
 				if (!/^[[(]/.test(currentSubfield.value)) {
 					const nextValue = preceedingSubfield.value + ',';
 					debug(`Updated subfield ${preceedingSubfield.code} from '${preceedingSubfield.value}' to '${nextValue}'`);
