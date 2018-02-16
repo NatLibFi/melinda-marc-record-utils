@@ -14,7 +14,7 @@
 		"url": "git@github.com:natlibfi/melinda-marc-record-utils.git"
 	},
 	"license": "LGPL-3.0+",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"main": "./dist/index.js",
 	"engines": {
 		"node": ">=4"
@@ -62,9 +62,9 @@
 			"prefer-arrow-callback": [
 				"error"
 			],
-      "unicorn/prefer-starts-ends-with": [
-        "off"
-      ]
+			"unicorn/prefer-starts-ends-with": [
+				"off"
+			]
 		}
 	},
 	"babel": {
