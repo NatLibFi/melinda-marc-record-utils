@@ -26,15 +26,13 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+const dictionarySortIndex = {
+	ysa: '0',
+	allars: '1',
+	musa: '2',
+	cilla: '3',
+	kaunokki: '4',
+	bella: '5'
+};
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export default dictionarySortIndex;

@@ -26,15 +26,19 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import lowerCase from 'lodash/lowerCase';
+import selectFirstValue from '../select-first-value';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export default function sortBySID(fieldA, fieldB) {
+	if (fieldA.tag === 'SID' && fieldB.tag === 'SID') {
+		const sidA = lowerCase(selectFirstValue(fieldA, 'b'));
+		const sidB = lowerCase(selectFirstValue(fieldB, 'b'));
+		if (sidA > sidB) {
+			return 1;
+		}
+		if (sidA < sidB) {
+			return -1;
+		}
+	}
+	return 0;
+}

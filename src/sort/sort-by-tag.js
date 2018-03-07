@@ -26,15 +26,18 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import getSortIndex from './get-sort-index';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
+export default function sortByTag(fieldA, fieldB) {
+	const orderA = getSortIndex(fieldA.tag);
+	const orderB = getSortIndex(fieldB.tag);
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+	if (orderA > orderB) {
+		return 1;
+	}
+	if (orderA < orderB) {
+		return -1;
+	}
+
+	return 0;
+}

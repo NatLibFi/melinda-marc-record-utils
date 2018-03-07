@@ -26,15 +26,12 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import isEqual from 'lodash/isEqual';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
+export default function fieldHasSubfield(code, value) {
+	const querySubfield = {code, value};
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+	return function (field) {
+		return field.subfields.some(subfield => isEqual(subfield, querySubfield));
+	};
+}

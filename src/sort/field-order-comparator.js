@@ -26,15 +26,23 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import sortAlphabetically from './sort-alphabetically';
+import sortBy264 from './sort-by-264';
+import sortByIndexTerms from './sort-by-index-terms';
+import sortByLOW from './sort-by-low';
+import sortBySID from './sort-by-sid';
+import sortByTag from './sort-by-tag';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
+const sorterFunctions = [sortByTag, sortByLOW, sortBySID, sortByIndexTerms, sortBy264, sortAlphabetically];
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export default function fieldOrderComparator(fieldA, fieldB) {
+	for (const sortFn of sorterFunctions) {
+		const result = sortFn(fieldA, fieldB);
+
+		if (result !== 0) {
+			return result;
+		}
+	}
+
+	return 0;
+}

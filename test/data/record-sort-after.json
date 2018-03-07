@@ -1,0 +1,664 @@
+{
+	"leader": "00000_a____",
+	"fields": [
+		{
+			"tag": "001",
+			"value": "000000000"
+		},
+		{
+			"tag": "008",
+			"value": "somerandom008content"
+		},
+		{
+			"tag": "STA",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "TEST-STA"
+				}
+			]
+		},
+		{
+			"tag": "035",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "z",
+					"value": "(FI-MELINDA)007010372"
+				}
+			]
+		},
+		{
+			"tag": "035",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "z",
+					"value": "(FI-MELINDA)009346890"
+				}
+			]
+		},
+		{
+			"tag": "100",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Test Author"
+				}
+			]
+		},
+		{
+			"tag": "245",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Some content"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": " ",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				},
+				{
+					"code": "3",
+					"value": "12"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				},
+				{
+					"code": "c",
+					"value": "1234567"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Espoo"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				},
+				{
+					"code": "c",
+					"value": "2345678"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Espoo"
+				},
+				{
+					"code": "b",
+					"value": "auto"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				},
+				{
+					"code": "c",
+					"value": "2345678"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Espoo"
+				},
+				{
+					"code": "b",
+					"value": "testi"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				},
+				{
+					"code": "c",
+					"value": "2345678"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "1",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				},
+				{
+					"code": "3",
+					"value": "ab"
+				},
+				{
+					"code": "c",
+					"value": "2345678"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": "3",
+			"ind2": "1",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				}
+			]
+		},
+		{
+			"tag": "264",
+			"ind1": " ",
+			"ind2": "3",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Helsinki"
+				}
+			]
+		},
+		{
+			"tag": "500",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Etukannessa tasku."
+				}
+			]
+		},
+		{
+			"tag": "500",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Takakannessa tasku."
+				}
+			]
+		},
+		{
+			"tag": "500",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Xylofoni takakannessa."
+				}
+			]
+		},
+		{
+			"tag": "583",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "MERGED FROM (FI-MELINDA)007010372 + (FI-MELINDA)009346890"
+				},
+				{
+					"code": "c",
+					"value": "2016-12-07T13:38:18+02:00"
+				},
+				{
+					"code": "5",
+					"value": "MELINDA"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "6",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruokaohjeet"
+				},
+				{
+					"code": "x",
+					"value": "lomailu"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "muonanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				},
+				{
+					"code": "9",
+					"value": "FENNI<KEEP>"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				},
+				{
+					"code": "9",
+					"value": "FENNI<KEEP>"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruokaohjeet"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				},
+				{
+					"code": "9",
+					"value": "FENNI<KEEP>"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "keittokirjat"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "RUOANVALMISTUS"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "allars"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "musa"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "cilla"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "aaa"
+				}
+			]
+		},
+		{
+			"tag": "650",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ruoanvalmistus"
+				},
+				{
+					"code": "2",
+					"value": "bbb"
+				}
+			]
+		},
+		{
+			"tag": "655",
+			"ind1": " ",
+			"ind2": "7",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "keittokirjat"
+				},
+				{
+					"code": "2",
+					"value": "ysa"
+				},
+				{
+					"code": "9",
+					"value": "FENNI<KEEP>"
+				}
+			]
+		},
+		{
+			"tag": "700",
+			"ind1": "1",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Lindholm, Johanna,"
+				},
+				{
+					"code": "e",
+					"value": "kirjoittaja,"
+				},
+				{
+					"code": "e",
+					"value": "valokuvaaja."
+				}
+			]
+		},
+		{
+			"tag": "901",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "MU20150707"
+				},
+				{
+					"code": "5",
+					"value": "FENNI"
+				}
+			]
+		},
+		{
+			"tag": "LOW",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "ANDER"
+				}
+			]
+		},
+		{
+			"tag": "LOW",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "FENNI"
+				}
+			]
+		},
+		{
+			"tag": "LOW",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "OULA"
+				}
+			]
+		},
+		{
+			"tag": "LOW",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "VASKI"
+				}
+			]
+		},
+		{
+			"tag": "SID",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "c",
+					"value": "(ANDL100013)1452028"
+				},
+				{
+					"code": "b",
+					"value": "ander"
+				}
+			]
+		},
+		{
+			"tag": "SID",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "c",
+					"value": "FCC007010372"
+				},
+				{
+					"code": "b",
+					"value": "fenni"
+				}
+			]
+		},
+		{
+			"tag": "SID",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "c",
+					"value": "FCC007010372"
+				},
+				{
+					"code": "b",
+					"value": "oula"
+				}
+			]
+		},
+		{
+			"tag": "SID",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "c",
+					"value": "(ANDL100001)3123396"
+				},
+				{
+					"code": "b",
+					"value": "vaski"
+				}
+			]
+		},
+		{
+			"tag": "CAT",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Somehow a cat field survived"
+				}
+			]
+		},
+		{
+			"tag": "HLI",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "TEST-HLI"
+				}
+			]
+		},
+		{
+			"tag": "XYZ",
+			"ind1": " ",
+			"ind2": " ",
+			"subfields": [
+				{
+					"code": "a",
+					"value": "Unknown fields are last"
+				}
+			]
+		}
+	]
+}
