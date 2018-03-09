@@ -26,15 +26,14 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
-
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export {default as anySelector} from './any-selector';
+export {default as dictionarySortIndex} from './dictionary-sort-index';
+export {default as fieldOrderComparator} from './field-order-comparator';
+export {default as getSortIndex} from './get-sort-index';
+export {default as sortAlphabetically} from './sort-alphabetically';
+export {default as sortBy264} from './sort-by-264';
+export {default as sortByIndexTerms} from './sort-by-index-terms';
+export {default as sortByLOW} from './sort-by-low';
+export {default as sortBySid} from './sort-by-sid';
+export {default as sortByTag} from './sort-by-tag';
+export {default as sortIndex} from './sort-index';

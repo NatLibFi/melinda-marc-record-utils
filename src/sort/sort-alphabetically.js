@@ -26,15 +26,26 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import lowerCase from 'lodash/lowerCase';
+import selectFirstValue from '../select-first-value';
+import anySelector from './any-selector';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
+export default function sortAlphabetically(fieldA, fieldB) {
+	if (fieldA.tag === fieldB.tag) {
+		const valueA = lowerCase(selectFirstValue(fieldA, anySelector));
+		const valueB = lowerCase(selectFirstValue(fieldB, anySelector));
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+		if (fieldA.tag === '500') {
+			console.log(anySelector);
+			console.log('500', valueA, valueB);
+		}
+
+		if (valueA > valueB) {
+			return 1;
+		}
+		if (valueA < valueB) {
+			return -1;
+		}
+	}
+	return 0;
+}

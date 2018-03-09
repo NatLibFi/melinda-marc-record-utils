@@ -26,15 +26,12 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import get from 'lodash/get';
+import sortIndex from './sort-index';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export default function getSortIndex(tag) {
+	if (isNaN(tag)) {
+		return get(sortIndex, tag, '9999');
+	}
+	return tag;
+}

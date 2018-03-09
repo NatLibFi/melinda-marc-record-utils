@@ -47,6 +47,7 @@
 		"cross-env": "^5.1.1",
 		"git-scripts": "^0.2.1",
 		"istanbul": "^0.4.5",
+		"marc-record-js": "^0.3.2",
 		"mocha": "^4.0.1",
 		"nodemon": "^1.12.4",
 		"npm-check-updates": "^2.13.0",

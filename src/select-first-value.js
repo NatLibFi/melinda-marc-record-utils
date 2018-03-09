@@ -26,15 +26,13 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+import head from 'lodash/head';
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
-
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+export default function selectFirstValue(field, subcode) {
+	if (field.subfields) {
+		return head(field.subfields
+			.filter(subfield => subcode.equals ? subcode.equals(subfield.code) : subcode === subfield.code)
+			.map(subfield => subfield.value));
+	}
+	return field.value;
+}

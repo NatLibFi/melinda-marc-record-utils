@@ -26,15 +26,20 @@
 *
 */
 
-import * as Punctuation from './punctuation';
-import * as AuthorizedPortion from './authorized-portion';
-import * as Sort from './sort';
+/* eslint-disable no-undef */
 
-export {Sort};
-export {Punctuation};
-export {AuthorizedPortion};
+import {expect} from 'chai';
+import MarcRecord from 'marc-record-js';
+import {Sort} from '../src/index';
+import recordBefore from './data/record-sort-before';
+import recordAfter from './data/record-sort-after';
 
-export {default as fieldToString} from './field-to-string';
-export {default as stringToField} from './string-to-field';
-export {default as selectFirstValue} from './select-first-value';
-export {default as fieldHasSubfield} from './field-has-subfield';
+describe('Sort', () => {
+	it('should sort fields correctly', () => {
+		const record = new MarcRecord(recordBefore);
+
+		record.fields.sort(Sort.fieldOrderComparator);
+
+		expect(record.toJsonObject()).to.deep.equal(recordAfter);
+	});
+});
