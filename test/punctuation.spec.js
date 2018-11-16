@@ -71,7 +71,12 @@ describe('fixPunctuation', () => {
 		[
 			'800 1  ‡aRosberg, Harri‡dabc‡0(FIN11)123',
 			'800 1  ‡aRosberg, Harri‡dabc‡0(FIN11)123'
-		]
+		],
+		[
+			'500 1  ‡iToinen identiteetti:‡aRosberg, Harri,‡dabc‡0(FIN11)123',
+			'500 1  ‡iToinen identiteetti:‡aRosberg, Harri,‡dabc‡0(FIN11)123'
+		],
+		
 	];
 
 	const bibRecordTests = [
