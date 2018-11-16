@@ -163,7 +163,7 @@
     "selector": "[457](00|10|11)",
     "namePortion": "$i",
     "description": "Relationship information (R)",
-    "portion": "T",
+    "portion": "cf",
     "preceedingPunctuation": "none",
     "exceptions": ""
   },
