@@ -231,7 +231,15 @@ describe('fixPunctuation', () => {
 		[
 			'700 1  ‡aAaltonen, Toini,‡d1906-1983‡0(FI-ASTERI-N)000039785',
 			'700 1  ‡aAaltonen, Toini,‡d1906-1983.‡0(FI-ASTERI-N)000039785'
-		]
+		],
+		[
+			'111 2  ‡aYhdistetyt tietojenkäsittelyn päivät‡d(2012 :‡cHelsinki)‡0(FIN11)000168665',
+			'111 2  ‡aYhdistetyt tietojenkäsittelyn päivät‡d(2012 :‡cHelsinki)‡0(FIN11)000168665'
+		],
+		[
+			'111 2  ‡aYhdistetyt tietojenkäsittelyn päivät‡d(2012‡cHelsinki)‡0(FIN11)000168665',
+			'111 2  ‡aYhdistetyt tietojenkäsittelyn päivät‡d(2012 :‡cHelsinki)‡0(FIN11)000168665'
+		],
 	];
 
 	describe('for authority records', () => {
