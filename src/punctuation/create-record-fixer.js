@@ -202,12 +202,12 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		return preceedingSubfield => {
 			if (code === preceedingSubfield.code) {
 				debug(`Adding ${type} to ${preceedingSubfield.code}`);
-				if (type === 'SEMICOLON') {
+				if (type === 'SEMICOLON' && !/;$/.test(preceedingSubfield.value)) {
 					const nextValue = preceedingSubfield.value + ' ;';
 					debug(`Updated subfield ${preceedingSubfield.code} from '${preceedingSubfield.value}' to '${nextValue}'`);
 					preceedingSubfield.value = nextValue;
 				}
-				if (type === 'COLON') {
+				if (type === 'COLON' && !/:$/.test(preceedingSubfield.value)) {
 					const nextValue = preceedingSubfield.value + ' :';
 					debug(`Updated subfield ${preceedingSubfield.code} from '${preceedingSubfield.value}' to '${nextValue}'`);
 					preceedingSubfield.value = nextValue;
