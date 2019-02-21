@@ -123,7 +123,22 @@ describe('AuthorizedPortion', () => {
 					'110 2  ‡aLääketieteellisen fysiikan ja tekniikan yhdistys. ‡bProgress report -kokous‡0(TST10)123345',
 					'710 2  ‡ejulkaisija.‡0(TST10)123345',
 					'710 2  ‡aLääketieteellisen fysiikan ja tekniikan yhdistys. ‡bProgress report -kokous‡ejulkaisija.‡0(TST10)123345'
+				],
+				[
+					'Should not lose affiliation information in subfield $u',
+					'100    ‡aAakkula, Immo',
+					'100    ‡aAakkula, I.‡uaffiliaatiotieto‡0(TST10)90001',
+					'100    ‡aAakkula, Immo‡uaffiliaatiotieto‡0(TST10)90001'
 				]
+				/* ,
+				[
+					'Should not lose affiliation information in subfield $g',
+					'100    ‡aAakkula, Immo',
+					'100    ‡aAakkula, I.‡uaffiliaatiotieto‡g9876‡0(TST10)90001',
+					'100    ‡aAakkula, Immo‡uaffiliaatiotieto‡g9876‡0(TST10)90001'
+				],
+				*/
+				
 			];
 
 			tests.forEach(test => {
@@ -192,6 +207,12 @@ describe('AuthorizedPortion', () => {
 					'100 0  ‡aNimi, Toinen,‡d1922-1999‡6ctrl‡0(TST10)1234',
 					'500 1  ‡aToinen Nimi‡0(TST10)1234',
 					'500 0  ‡aNimi, Toinen,‡d1922-1999‡0(TST10)1234'
+				],
+				[
+					'Should not lose control subfield ifrom target',
+					'100 0  ‡aNimi, Toinen,‡d1922-1999‡6ctrl‡0(TST10)1234',
+					'500 1  ‡iToinen identititeetti:‡aToinen Nimi‡0(TST10)1234',
+					'500 0  ‡iToinen identititeetti:‡aNimi, Toinen,‡d1922-1999‡0(TST10)1234'
 				],
 				[
 					'Should not copy zero subfields from source',
