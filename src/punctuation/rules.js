@@ -26,8 +26,9 @@
 *
 */
 
-export {BibRules, AuthRules} from './rules';
-export {default as RecordTypes} from './record-types';
-export {default as PunctuationError} from './punctuation-error';
-export {default as readPunctuationRulesFromJSON} from './read-rules-from-json';
-export {default as createRecordFixer} from './create-record-fixer';
+import fs from 'fs';
+import path from 'path';
+import readRules from './read-rules-from-json';
+
+export const BibRules = readRules(JSON.parse(fs.readFileSync(path.join(__dirname, 'bib-punctuation.json'), 'utf8')));
+export const AuthRules = readRules(JSON.parse(fs.readFileSync(path.join(__dirname, 'auth-punctuation.json'), 'utf8')));
