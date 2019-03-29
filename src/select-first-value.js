@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -34,5 +34,6 @@ export default function selectFirstValue(field, subcode) {
 			.filter(subfield => subcode.equals ? subcode.equals(subfield.code) : subcode === subfield.code)
 			.map(subfield => subfield.value));
 	}
+
 	return field.value;
 }

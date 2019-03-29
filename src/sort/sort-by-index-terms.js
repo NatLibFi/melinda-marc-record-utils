@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -35,13 +35,29 @@ import dictionarySortIndex from './dictionary-sort-index';
 
 export default function sortByIndexTerms(fieldA, fieldB) {
 	const indexTermFields = [
-		'600', '610', '611', '630', '648', '650', '651', '652',
-		'653', '654', '655', '656', '657', '658', '659', '662'];
+		'600',
+		'610',
+		'611',
+		'630',
+		'648',
+		'650',
+		'651',
+		'652',
+		'653',
+		'654',
+		'655',
+		'656',
+		'657',
+		'658',
+		'659',
+		'662'
+	];
 
 	if (fieldA.tag === fieldB.tag && includes(indexTermFields, fieldA.tag)) {
 		if (fieldA.ind2 > fieldB.ind2) {
 			return 1;
 		}
+
 		if (fieldA.ind2 < fieldB.ind2) {
 			return -1;
 		}
@@ -55,6 +71,7 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (orderByDictionaryA > orderByDictionaryB) {
 			return 1;
 		}
+
 		if (orderByDictionaryA < orderByDictionaryB) {
 			return -1;
 		}
@@ -67,6 +84,7 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (hasFENNI9A && !hasFENNI9B) {
 			return -1;
 		}
+
 		if (!hasFENNI9A && hasFENNI9B) {
 			return 1;
 		}
@@ -77,6 +95,7 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (valueA > valueB) {
 			return 1;
 		}
+
 		if (valueA < valueB) {
 			return -1;
 		}
@@ -87,6 +106,7 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (valueBX === undefined || valueAX > valueBX) {
 			return 1;
 		}
+
 		if (valueAX < valueBX) {
 			return -1;
 		}
@@ -97,6 +117,7 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (valueBZ === undefined || valueAZ > valueBZ) {
 			return 1;
 		}
+
 		if (valueAZ < valueBZ) {
 			return -1;
 		}
@@ -107,9 +128,11 @@ export default function sortByIndexTerms(fieldA, fieldB) {
 		if (valueBY === undefined || valueAY > valueBY) {
 			return 1;
 		}
+
 		if (valueAY < valueBY) {
 			return -1;
 		}
 	}
+
 	return 0;
 }
