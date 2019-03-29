@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -104,7 +104,7 @@ export default function findAuthorizedPortion(recordType, recordField) {
 			default: isSpecifierSubfield = () => false;
 		}
 
-    // $e, $j and $9 marked as non-authorized to keep them from duplicating in bibs
+		// $e, $j and $9 marked as non-authorized to keep them from duplicating in bibs
 		let isAuthorizedSubfield;
 		switch (recordField.tag) {
 			case '100':
@@ -176,6 +176,7 @@ export default function findAuthorizedPortion(recordType, recordField) {
 			} : null
 		};
 	}
+
 	if (recordType === RecordType.BIB) {
 		const isTitlePortion = curry(isTitlePortionSubfield)(recordField);
 		const titlePortionStart = recordField.subfields.findIndex(isTitlePortion);
@@ -293,5 +294,6 @@ export default function findAuthorizedPortion(recordType, recordField) {
 			} : null
 		};
 	}
+
 	throw new Error(`Invalid record type ${recordType}`);
 }

@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -68,6 +68,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 			if (inNamePortion && portion === 'NT') {
 				portion = 'N';
 			}
+
 			if (!inNamePortion && portion === 'NT') {
 				portion = 'T';
 			}
@@ -94,6 +95,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		if (recordType === RecordTypes.BIBLIOGRAPHIC) {
 			addNamePortionPunctuation(preceedingField);
 		}
+
 		debug(`After punctuation: ${fieldToString(field)}`);
 	}
 
@@ -108,6 +110,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		if (portions.length === 0) {
 			throw new PunctuationError(`Unknown subfield code ${subfield.code}`);
 		}
+
 		return head(portions).toUpperCase();
 	}
 
@@ -152,6 +155,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 				}
 			}
 		}
+
 		if (punctType === 'COND_COMMA') {
 			if (!/[-,]$/.test(preceedingSubfield.value)) {
 				const nextValue = preceedingSubfield.value + ',';
@@ -169,6 +173,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		if (punct.length === 0) {
 			throw new PunctuationError(`Unknown subfield code ${subfield.code}`);
 		}
+
 		return head(punct).toUpperCase();
 	}
 
@@ -178,6 +183,7 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 		if (exceptions.length === 0) {
 			throw new PunctuationError(`Unknown subfield code ${subfield.code}`);
 		}
+
 		return head(exceptions);
 	}
 
@@ -207,13 +213,16 @@ export default function createPunctuationFixer(rules, recordType = RecordTypes.B
 					debug(`Updated subfield ${preceedingSubfield.code} from '${preceedingSubfield.value}' to '${nextValue}'`);
 					preceedingSubfield.value = nextValue;
 				}
+
 				if (type === 'COLON' && !/:$/.test(preceedingSubfield.value)) {
 					const nextValue = preceedingSubfield.value + ' :';
 					debug(`Updated subfield ${preceedingSubfield.code} from '${preceedingSubfield.value}' to '${nextValue}'`);
 					preceedingSubfield.value = nextValue;
 				}
+
 				return true;
 			}
+
 			return false;
 		};
 	}

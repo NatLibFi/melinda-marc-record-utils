@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -34,6 +34,7 @@ export default function sortBy264(fieldA, fieldB) {
 		if (fieldA.ind2 > fieldB.ind2) {
 			return 1;
 		}
+
 		if (fieldA.ind2 < fieldB.ind2) {
 			return -1;
 		}
@@ -41,6 +42,7 @@ export default function sortBy264(fieldA, fieldB) {
 		if (fieldA.ind1 > fieldB.ind1) {
 			return 1;
 		}
+
 		if (fieldA.ind1 < fieldB.ind1) {
 			return -1;
 		}
@@ -51,6 +53,7 @@ export default function sortBy264(fieldA, fieldB) {
 		if (value3A === undefined || value3A < value3B) {
 			return -1;
 		}
+
 		if (value3B === undefined || value3A > value3B) {
 			return 1;
 		}
@@ -61,6 +64,7 @@ export default function sortBy264(fieldA, fieldB) {
 		if (valueCA === undefined || valueCA < valueCB) {
 			return -1;
 		}
+
 		if (valueCB === undefined || valueCA > valueCB) {
 			return 1;
 		}
@@ -71,6 +75,7 @@ export default function sortBy264(fieldA, fieldB) {
 		if (valueAA === undefined || valueAA < valueAB) {
 			return -1;
 		}
+
 		if (valueAB === undefined || valueAA > valueAB) {
 			return 1;
 		}
@@ -81,9 +86,11 @@ export default function sortBy264(fieldA, fieldB) {
 		if (valueBA === undefined || valueBA < valueBB) {
 			return -1;
 		}
+
 		if (valueBB === undefined || valueBA > valueBB) {
 			return 1;
 		}
 	}
+
 	return 0;
 }

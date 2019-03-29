@@ -4,7 +4,7 @@
 *
 * Utility functions for dealing with MARC records
 *
-* Copyright (C) 2018 University Of Helsinki (The National Library Of Finland)
+* Copyright (C) 2018-2019 University Of Helsinki (The National Library Of Finland)
 *
 * This file is part of melinda-marc-record-utils
 *
@@ -43,7 +43,7 @@ export default function updateAuthorizedPortion(recordType, recordField, authori
 		updatedRecordField.subfields.splice.bind(updatedRecordField.subfields, currentAuthorizedPortion.range.start, currentAuthorizedPortion.range.length).apply(null, cloneDeep(authorizedPortion.subfields));
 		updatedRecordField.ind1 = authorizedPortion.ind1;
 
-    // Update tag series
+		// Update tag series
 		const tagSeries = tag => tag.substr(1);
 		if (tagSeries(recordField.tag) !== tagSeries(authorizedPortion.tag)) {
 			updatedRecordField.tag = updatedRecordField.tag.substr(0, 1) + tagSeries(authorizedPortion.tag);
@@ -51,6 +51,7 @@ export default function updateAuthorizedPortion(recordType, recordField, authori
 
 		return updatedRecordField;
 	}
+
 	if (recordType === RecordType.BIB) {
 		const currentAuthorizedPortion = findAuthorizedPortion(recordType, recordField);
 		debug('currentAuthorizedPortion in bib record', currentAuthorizedPortion);
@@ -62,21 +63,22 @@ export default function updateAuthorizedPortion(recordType, recordField, authori
 		debug('before update', fieldToString(recordField));
 		debug('after update ', fieldToString(updatedRecordField));
 
-    // Update tag series
+		// Update tag series
 		const tagSeries = tag => tag.substr(1);
 		if (tagSeries(recordField.tag) !== tagSeries(authorizedPortion.tag)) {
 			updatedRecordField.tag = updatedRecordField.tag.substr(0, 1) + tagSeries(authorizedPortion.tag);
 		}
 
-    // Update specifier portion if authorizedPortion contains it.
+		// Update specifier portion if authorizedPortion contains it.
 		if (authorizedPortion.specifier && authorizedPortion.specifier.range.length > 0) {
-      // Find the authorized portion again since the ranges may change after fields are updated.
+			// Find the authorized portion again since the ranges may change after fields are updated.
 			const updatedAuthorizedPortion = findAuthorizedPortion(recordType, updatedRecordField);
 
-      // Remove specifier (if any) from current record
+			// Remove specifier (if any) from current record
 			if (updatedAuthorizedPortion.specifier && authorizedPortion.specifier.range.length > 0) {
 				updatedRecordField.subfields.splice(updatedAuthorizedPortion.specifier.range.start, updatedAuthorizedPortion.specifier.range.length);
 			}
+
 			const updatedAuthorizedPortionWithoutSpecifier = findAuthorizedPortion(recordType, updatedRecordField);
 
 			const specifierStartPosition = updatedAuthorizedPortionWithoutSpecifier.range.start + updatedAuthorizedPortionWithoutSpecifier.range.length;
@@ -85,5 +87,6 @@ export default function updateAuthorizedPortion(recordType, recordField, authori
 
 		return updatedRecordField;
 	}
+
 	throw new Error(`Invalid record type ${recordType}`);
 }
